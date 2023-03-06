@@ -1,18 +1,18 @@
 package src.education;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class Mark {
     private final String subject;
     private int markForSubject;
-    private final ArrayList<Task> tasks;
+    private final List<Task> tasks;
 
     /**
      *
      * @param subject Название предмета
      * @param tasks Список заданий по предмету
      */
-    public Mark(String subject, ArrayList<Task> tasks){
+    public Mark(String subject, List<Task> tasks){
         this.subject = subject;
         this.tasks = tasks;
     }
@@ -52,6 +52,6 @@ public class Mark {
             mark += task.getMarkForTask();
             count++;
         }
-        markForSubject = Math.round(mark / count);
+        markForSubject = count != 0? Math.round(mark / count) : 0;
     }
 }

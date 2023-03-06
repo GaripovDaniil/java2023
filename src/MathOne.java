@@ -2,6 +2,11 @@ package src;
 
 public class MathOne {
     /**
+     * Приватный конструктор для сокрытия публичного
+     */
+    private MathOne(){}
+
+    /**
      * <p>Находит факториал введенного числа</p>
      * @param number Число, факториал которого нужно найти
      * @return number!; 1, если введен 0 или 1; IllegalArgumentException, если введено отрицательное число

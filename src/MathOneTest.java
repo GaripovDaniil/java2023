@@ -9,9 +9,7 @@ class MathOneTest {
 
     @Test
     void factThatFactorialOfNegativeIsException() {
-        IllegalArgumentException thrown = Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            int result = MathOne.fact(-2);
-        });
+        Assertions.assertThrows(IllegalArgumentException.class, () -> MathOne.fact(-2));
     }
 
     @Test
