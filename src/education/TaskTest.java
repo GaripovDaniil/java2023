@@ -8,25 +8,25 @@ class TaskTest {
 
     @Test
     void checkingTaskCreationName() {
-        var task = new Task("Программирование", 1, 5);
+        var task = new Task.TaskBuilder("Программирование", 1, 5).build();
         assertEquals("Программирование", task.getSubjectName());
     }
 
     @Test
     void checkingTaskCreationNumber() {
-        var task = new Task("Программирование", 1, 5);
+        var task = new Task.TaskBuilder("Программирование", 1, 5).build();
         assertEquals(1, task.getNumberOfTask());
     }
 
     @Test
     void checkingTaskCreationMark() {
-        var task = new Task("Программирование", 1, 5);
+        var task = new Task.TaskBuilder("Программирование", 1, 5).build();
         assertEquals(5, task.getMarkForTask());
     }
 
     @Test
     void changeMarkIsCorrect() {
-        var task = new Task("Программирование", 1, 3);
+        var task = new Task.TaskBuilder("Программирование", 1, 3).build();
         task.changeMarkForTask(4);
         assertEquals(4, task.getMarkForTask());
     }

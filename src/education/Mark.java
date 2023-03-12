@@ -3,6 +3,9 @@ package src.education;
 import java.util.List;
 
 public class Mark {
+    /**
+     * Имя предмета
+     */
     private final String subject;
     private int markForSubject;
     private final List<Task> tasks;

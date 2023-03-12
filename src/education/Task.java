@@ -7,14 +7,12 @@ public class Task {
 
     /**
      *
-     * @param subjectName Название предмета
-     * @param numberOfTask Номер задания
-     * @param markForTask Оценка за задание
+     * @param taskBuilder Конструктор задания
      */
-    public Task(String subjectName, int numberOfTask, int markForTask){
-        this.subjectName = subjectName;
-        this.numberOfTask = numberOfTask;
-        this.markForTask = markForTask;
+    private Task(TaskBuilder taskBuilder){
+        subjectName = taskBuilder.subjectName;
+        numberOfTask = taskBuilder.numberOfTask;
+        markForTask = taskBuilder.markForTask;
     }
 
     /**
@@ -47,5 +45,31 @@ public class Task {
      */
     public void changeMarkForTask(int newMarkForTask){
         markForTask = newMarkForTask;
+    }
+
+    public static class TaskBuilder {
+        private final String subjectName;
+        private final int numberOfTask;
+        private final int markForTask;
+
+        /**
+         *
+         * @param subjectName Название предмета
+         * @param numberOfTask Номер задания
+         * @param markForTask Оценка за задание
+         */
+        public TaskBuilder(String subjectName, int numberOfTask, int markForTask) {
+            this.subjectName = subjectName;
+            this.numberOfTask =numberOfTask;
+            this.markForTask = markForTask;
+        }
+
+        /**
+         *
+         * @return Объект класса Задание
+         */
+        public Task build() {
+            return new Task(this);
+        }
     }
 }
