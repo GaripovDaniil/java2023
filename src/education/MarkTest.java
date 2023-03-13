@@ -17,15 +17,15 @@ class MarkTest {
     @Test
     void appendTaskIsCorrect() {
         var mark = new Mark("Программирование", new ArrayList<>());
-        mark.appendTask(new Task.TaskBuilder("Программирование", 1, 4).build());
+        mark.appendTask(new Task.TaskBuilder().subjectName("Программирование").numberOfTask(1).markForTask(4).build());
         assertEquals(4, mark.getMarkForSubject());
     }
 
     @Test
     void findMarkIsCorrect() {
         var mark = new Mark("Программирование", new ArrayList<>());
-        mark.appendTask(new Task.TaskBuilder("Программирование", 1, 4).build());
-        mark.appendTask(new Task.TaskBuilder("Программирование", 2, 5).build());
+        mark.appendTask(new Task.TaskBuilder().subjectName("Программирование").numberOfTask(1).markForTask(4).build());
+        mark.appendTask(new Task.TaskBuilder().subjectName("Программирование").numberOfTask(2).markForTask(5).build());
         assertEquals(5, mark.getMarkForSubject());
     }
 }
