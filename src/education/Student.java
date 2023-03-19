@@ -1,29 +1,18 @@
 package src.education;
 
+import lombok.Builder;
+import lombok.Getter;
+
 import java.util.List;
 
+@Builder
 public class Student {
+    @Getter
     private final String name;
+
     private int scholarship;
+    @Getter
     private final List<Mark> marks;
-
-    /**
-     *
-     * @param studentBuilder Конструктор для создания студента
-     */
-    private Student(StudentBuilder studentBuilder) {
-        name = studentBuilder.name;
-        marks = studentBuilder.marks;
-        scholarship = findScholarship();
-    }
-
-    /**
-     *
-     * @return Имя студента
-     */
-    public String getName(){
-        return name;
-    }
 
     /**
      *
@@ -61,28 +50,5 @@ public class Student {
             return 0;
         }
         return 3000;
-    }
-
-    public static class StudentBuilder {
-        private final String name;
-        private final List<Mark> marks;
-
-        /**
-         *
-         * @param name Имя студента
-         * @param marks Оценки студента за предметы
-         */
-        public StudentBuilder(String name, List<Mark> marks) {
-            this.name = name;
-            this.marks = marks;
-        }
-
-        /**
-         *
-         * @return Объект класса Студент
-         */
-        public Student build() {
-            return new Student(this);
-        }
     }
 }

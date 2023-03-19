@@ -1,32 +1,19 @@
 package src.education;
 
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+
 import java.util.List;
 
+@RequiredArgsConstructor
 public class Mark {
     /**
      * Имя предмета
      */
+    @Getter
     private final String subject;
     private int markForSubject;
     private final List<Task> tasks;
-
-    /**
-     *
-     * @param subject Название предмета
-     * @param tasks Список заданий по предмету
-     */
-    public Mark(String subject, List<Task> tasks){
-        this.subject = subject;
-        this.tasks = tasks;
-    }
-
-    /**
-     *
-     * @return Название предмета
-     */
-    public String getSubject(){
-        return subject;
-    }
 
     /**
      *

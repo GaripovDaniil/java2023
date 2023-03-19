@@ -12,8 +12,6 @@ public class Task {
     @Getter
     private int markForTask;
 
-
-
     /**
      * Меняет оценку за задание
      * @param newMarkForTask Новая оценка за задание
