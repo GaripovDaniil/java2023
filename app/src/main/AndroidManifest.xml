@@ -8,12 +8,15 @@
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:name=".App"
         android:supportsRtl="true"
-        android:theme="@style/Theme.TaskBook"
+        android:theme="@style/Theme.TaskBookещеОдин"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
-            android:exported="true">
+            android:name=".screens.main.MainActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.TaskBookещеОдин.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

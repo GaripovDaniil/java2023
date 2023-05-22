@@ -12,5 +12,5 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "Task Book"
+rootProject.name = "Task Book (еще один)"
 include ':app'
